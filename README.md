@@ -161,4 +161,4 @@ addition:
     RET
 ```
 
-More examples in the `exemples/` directory.
+More examples in the `examples/` directory.
