@@ -1,0 +1,17 @@
+; ================================
+; Factorial computation (5! = 120)
+; ================================
+
+MOV R0, 5       ; n = 5
+MOV R1, 1       ; result = 1
+
+loop:
+    CMP R0, 0
+    JEQ end
+    MUL R1, R0  ; result *= n
+    SUB R0, 1   ; n--
+    JMP loop
+
+end:
+    PRINT R1     ; prints 120
+    HLT

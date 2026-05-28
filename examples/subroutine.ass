@@ -1,0 +1,35 @@
+; ================================
+; Example with CALL/RET and stack
+; ================================
+
+MOV R0, 7
+MOV R1, 3
+
+; Call the "addition" function
+PUSH R0
+PUSH R1
+CALL addition
+PRINT R0         ; prints 10
+
+; Call the "square" function
+MOV R0, 6
+CALL square
+PRINT R0         ; prints 36
+
+HLT
+
+; --- Subroutine: addition ---
+; Pops 2 values, returns their sum in R0
+addition:
+    POP R5       ; b
+    POP R4       ; a
+    MOV R0, R4
+    ADD R0, R5
+    RET
+
+; --- Subroutine: square ---
+; R0 = R0 * R0
+square:
+    MOV R1, R0
+    MUL R0, R1
+    RET

@@ -1,0 +1,23 @@
+; ================================
+; Fibonacci sequence (first 10)
+; ================================
+
+MOV R0, 0       ; a = 0
+MOV R1, 1       ; b = 1
+MOV R2, 10      ; counter
+
+loop:
+    CMP R2, 0
+    JEQ end
+
+    PRINT R0     ; print current term
+
+    MOV R3, R1   ; temp = b
+    ADD R1, R0   ; b = a + b
+    MOV R0, R3   ; a = temp
+
+    SUB R2, 1    ; counter--
+    JMP loop
+
+end:
+    HLT
